@@ -33,7 +33,7 @@ a {
     --white: #ffffff;
     --text-light: #dce6e1;
 
-    --navbar-height: 100px;
+    --navbar-height: 145px;
 }
 
 
@@ -46,66 +46,87 @@ a {
 
     top: 0;
     left: 0;
+    right: 0;
 
     width: 100%;
-
     height: var(--navbar-height);
 
     background-color: var(--dark-green);
 
-    z-index: 1000;
+    z-index: 99999;
 
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+    /*
+        Gul/orange linje längst ner på navbaren.
+    */
+    border-bottom: 1px solid var(--orange);
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 }
 
 .nav-container {
-    width: min(1400px, 92%);
-
+    width: min(1600px, 94%);
     height: 100%;
 
     margin: 0 auto;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 }
 
 
-/* NAVBAR LOGO */
+/* =========================================================
+   NAVBAR LOGO
+========================================================= */
 
 .nav-logo {
-    height: 100%;
-
     display: flex;
-
     align-items: center;
+
+    width: 470px;
+    height: 130px;
+
+    overflow: visible;
+
+    flex-shrink: 0;
 }
 
 .nav-logo img {
-    width: 210px;
+    display: block;
 
-    max-height: 72px;
+    width: 440px;
+    height: 125px;
+
+    max-width: none;
 
     object-fit: contain;
+
+    /*
+        Ytterligare lite större än föregående version.
+    */
+    transform: scale(1.18);
+
+    transform-origin: left center;
 }
 
 
-/* NAVIGATION */
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 .nav-links {
     display: flex;
-
     align-items: center;
 
-    gap: 55px;
+    gap: 70px;
 }
 
 .nav-links a {
     color: var(--white);
 
-    font-size: 16px;
+    font-size: 19px;
+
+    white-space: nowrap;
 
     transition: opacity 0.2s ease;
 }
@@ -120,6 +141,7 @@ a {
 ========================================================= */
 
 main {
+    margin: 0;
     padding-top: var(--navbar-height);
 }
 
@@ -133,20 +155,15 @@ main {
 
     width: 100%;
 
-    min-height: 650px;
-
-    height: clamp(650px, 76svh, 820px);
+    aspect-ratio: 16 / 9;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     background-image: url("herohem.avif");
 
     background-size: cover;
-
     background-position: center center;
 
     overflow: hidden;
@@ -157,65 +174,63 @@ main {
 
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.38);
+    background: rgba(30, 50, 15, 0.1);
 }
 
 .hero-content {
     position: relative;
 
-    z-index: 1;
+    z-index: 2;
 
-    width: min(1100px, 90%);
+    width: min(1250px, 90%);
 
     text-align: center;
 
     color: var(--white);
 
-    padding: 40px 0;
+    padding: 60px 0;
 }
 
 .hero-content h1 {
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(55px, 6.5vw, 92px);
+    font-size: clamp(65px, 7vw, 105px);
 
     font-weight: 400;
-
     font-style: italic;
 
-    line-height: 1.04;
+    line-height: 1.02;
 
-    margin-bottom: 38px;
+    margin-bottom: 45px;
 }
 
 .hero-content p {
-    max-width: 800px;
+    max-width: 950px;
 
-    margin: 0 auto 35px;
+    margin: 0 auto 42px;
 
-    font-size: 17px;
+    font-size: 20px;
 
     color: var(--text-light);
 }
 
 
 /* =========================================================
-   BUTTON
+   KNAPP
 ========================================================= */
 
 .button {
     display: inline-block;
 
-    padding: 16px 40px;
+    padding: 18px 48px;
 
     background-color: var(--orange);
 
     color: var(--white);
 
-    border-radius: 4px;
+    border-radius: 5px;
 
-    font-size: 15px;
-
+    font-size: 17px;
     font-weight: 600;
 
     transition:
@@ -239,11 +254,11 @@ main {
 
     color: var(--white);
 
-    padding: 120px 0 135px;
+    padding: 150px 0 165px;
 }
 
 .section-container {
-    width: min(1400px, 90%);
+    width: min(1550px, 92%);
 
     margin: 0 auto;
 
@@ -254,35 +269,38 @@ main {
 .experience h2 {
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(42px, 4.5vw, 62px);
+    font-size: clamp(50px, 5vw, 72px);
 
     font-weight: 400;
-
     font-style: italic;
 
-    line-height: 1.2;
+    line-height: 1.15;
 }
 
 .section-line {
-    width: 85px;
-
-    height: 2px;
+    width: 100px;
+    height: 3px;
 
     background-color: var(--orange);
 
-    margin: 25px auto 32px;
+    margin: 30px auto 38px;
 }
 
 .intro-text {
-    max-width: 900px;
+    max-width: 1050px;
 
     margin: 0 auto;
 
     color: var(--text-light);
 
-    font-size: 17px;
-}
+    font-family: Georgia, "Times New Roman", serif;
 
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    letter-spacing: 0.2px;
+}
 
 /* =========================================================
    BILDER
@@ -293,28 +311,27 @@ main {
 
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 55px;
+    gap: 85px;
 
     width: 100%;
 
-    max-width: 1250px;
+    max-width: 1400px;
 
-    margin: 75px auto 0;
+    margin: 105px auto 0;
 }
 
 .image-card {
+    width: 100%;
+
     aspect-ratio: 1 / 1;
 
     overflow: hidden;
 
     background-color: #234f3b;
-
-    border-radius: 1px;
 }
 
 .image-card img {
     width: 100%;
-
     height: 100%;
 
     object-fit: cover;
@@ -336,43 +353,43 @@ main {
 
     color: var(--white);
 
-    padding: 0 0 135px;
+    padding: 0 0 165px;
 }
 
 .experience-container {
-    width: min(950px, 90%);
+    width: min(1100px, 90%);
 
     margin: 0 auto;
 
     text-align: center;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
 
-    padding-top: 75px;
+    padding-top: 90px;
 }
 
 .experience p {
     color: var(--text-light);
 
-    font-size: 17px;
+    font-size: 19px;
 
-    margin-bottom: 35px;
+    margin-bottom: 42px;
 }
 
 .experience ul {
     list-style: none;
 
-    max-width: 700px;
+    max-width: 800px;
 
-    margin: 0 auto 40px;
+    margin: 0 auto 50px;
 
     color: var(--text-light);
 
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .experience li {
-    margin: 12px 0;
+    margin: 15px 0;
 }
 
 .experience li::before {
@@ -380,7 +397,7 @@ main {
 
     color: var(--orange);
 
-    margin-right: 11px;
+    margin-right: 12px;
 }
 
 
@@ -391,15 +408,15 @@ main {
 .footer {
     background-color: var(--light);
 
-    min-height: 350px;
+    min-height: 430px;
 
     color: var(--dark-green);
 
-    padding: 75px 0 45px;
+    padding: 90px 0 55px;
 }
 
 .footer-container {
-    width: min(1400px, 90%);
+    width: min(1550px, 92%);
 
     margin: 0 auto;
 
@@ -409,7 +426,7 @@ main {
 
     align-items: start;
 
-    gap: 90px;
+    gap: 120px;
 }
 
 .footer-column {
@@ -417,23 +434,23 @@ main {
 
     flex-direction: column;
 
-    gap: 11px;
+    gap: 13px;
 }
 
 .footer-column h3 {
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 20px;
+    font-size: 24px;
 
     font-weight: 400;
 
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .footer-column a {
     width: fit-content;
 
-    font-size: 15px;
+    font-size: 17px;
 
     color: #4c6359;
 
@@ -445,24 +462,263 @@ main {
 }
 
 
-/* FOOTER LOGO */
+/* =========================================================
+   FOOTER LOGO
+========================================================= */
 
 .footer-logo {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
-    min-height: 190px;
+    min-height: 240px;
 }
 
 .footer-logo img {
-    width: 240px;
+    width: 330px;
 
-    max-height: 210px;
+    height: 260px;
+
+    max-width: none;
 
     object-fit: contain;
+}
+
+
+
+/* =========================================================
+   OM OSS
+========================================================= */
+
+.about-page {
+    padding-top: var(--navbar-height);
+
+    background-color: var(--green);
+
+    color: var(--white);
+}
+
+
+/* =========================================================
+   TOPPBILDER
+========================================================= */
+
+.about-top {
+    width: min(1350px, 88%);
+
+    margin: 0 auto;
+
+    height: 650px;
+
+    position: relative;
+}
+
+.about-top-image {
+    position: absolute;
+
+    width: 380px;
+}
+
+.about-top-image img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+.about-top-left {
+    left: 5%;
+    top: 90px;
+}
+
+.about-top-right {
+    right: 5%;
+    top: 220px;
+}
+
+
+/* =========================================================
+   FRÅN TRÄDEN TILL VEDEN
+========================================================= */
+
+.about-intro {
+    width: min(1350px, 88%);
+
+    margin: 0 auto;
+
+    min-height: 650px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 380px;
+
+    gap: 130px;
+
+    align-items: start;
+}
+
+.about-intro-content {
+    padding-top: 50px;
+}
+
+.about-intro h1,
+.customer-section h2,
+.team-section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(55px, 5vw, 76px);
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    line-height: 1.15;
+}
+
+.about-line {
+    width: 100%;
+
+    max-width: 650px;
+
+    height: 3px;
+
+    background-color: var(--orange);
+
+    margin: 35px 0 50px;
+}
+
+.about-intro p,
+.customer-content p {
+    max-width: 720px;
+
+    color: var(--text-light);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 22px;
+
+    line-height: 2;
+
+    letter-spacing: 0.2px;
+}
+
+.about-intro-image {
+    width: 380px;
+
+    align-self: start;
+}
+
+.about-intro-image img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+
+/* =========================================================
+   KUNDBEHOV
+========================================================= */
+
+.customer-section {
+    width: min(1350px, 88%);
+
+    margin: 130px auto 0;
+
+    min-height: 650px;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 1fr;
+
+    gap: 110px;
+
+    align-items: start;
+}
+
+.customer-image {
+    width: 100%;
+
+    margin-top: 110px;
+}
+
+.customer-image img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+.customer-content {
+    padding-top: 0;
+}
+
+.customer-content .about-line {
+    max-width: 100%;
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================================================
+   TEAM
+========================================================= */
+
+.team-section {
+    width: min(1350px, 88%);
+
+    margin: 100px auto 0;
+
+    padding: 100px 0 150px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.team-section .about-line {
+    max-width: 100%;
+
+    margin: 35px 0 70px;
+}
+
+.team-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 150px;
+
+    margin-top: 0;
+}
+
+.team-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 60px;
+}
+
+.team-member h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 25px;
+
+    font-style: italic;
+
+    font-weight: 400;
+
+    margin-bottom: 8px;
+}
+
+.team-member p {
+    color: var(--text-light);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    letter-spacing: 0.7px;
 }
 
 
@@ -470,18 +726,283 @@ main {
    TABLET
 ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 850px) {
+
+    .about-top {
+        width: 90%;
+
+        height: 540px;
+    }
+
+    .about-top-image {
+        width: 280px;
+    }
+
+    .about-top-left {
+        left: 0;
+        top: 70px;
+    }
+
+    .about-top-right {
+        right: 0;
+        top: 200px;
+    }
+
+
+    .about-intro {
+        width: 90%;
+
+        grid-template-columns: 1fr 280px;
+
+        gap: 60px;
+
+        min-height: 550px;
+    }
+
+    .about-intro-image {
+        width: 280px;
+    }
+
+    .about-intro h1,
+    .customer-section h2,
+    .team-section h2 {
+        font-size: 55px;
+    }
+
+    .about-intro p,
+    .customer-content p {
+        font-size: 19px;
+    }
+
+
+    .customer-section {
+        width: 90%;
+
+        gap: 55px;
+
+        min-height: 550px;
+
+        margin-top: 100px;
+    }
+
+    .customer-image {
+        margin-top: 80px;
+    }
+
+
+    .team-section {
+        width: 90%;
+
+        padding-top: 80px;
+
+        padding-bottom: 120px;
+    }
+
+    .team-grid {
+        gap: 70px;
+    }
+}
+
+
+/* =========================================================
+   MOBIL
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .about-top {
+        width: 90%;
+
+        height: 560px;
+    }
+
+    .about-top-image {
+        width: 200px;
+    }
+
+    .about-top-left {
+        left: 0;
+        top: 60px;
+    }
+
+    .about-top-right {
+        right: 0;
+        top: 230px;
+    }
+
+
+    .about-intro {
+        width: 90%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 70px;
+
+        min-height: 0;
+    }
+
+    .about-intro-content {
+        padding-top: 20px;
+    }
+
+    .about-intro h1,
+    .customer-section h2,
+    .team-section h2 {
+        font-size: 45px;
+    }
+
+    .about-line {
+        margin: 30px 0 40px;
+    }
+
+    .about-intro p,
+    .customer-content p {
+        font-size: 18px;
+
+        line-height: 1.9;
+    }
+
+    .about-intro-image {
+        width: 85%;
+
+        align-self: flex-end;
+    }
+
+
+    /* KUNDBEHOV */
+
+    .customer-section {
+        width: 90%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 65px;
+
+        margin-top: 130px;
+
+        min-height: 0;
+    }
+
+    .customer-image {
+        width: 100%;
+
+        margin-top: 0;
+    }
+
+
+    /* TEAM */
+
+    .team-section {
+        width: 90%;
+
+        margin-top: 130px;
+
+        padding-top: 80px;
+
+        padding-bottom: 100px;
+    }
+
+    .team-section .about-line {
+        margin-bottom: 55px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .team-column {
+        gap: 45px;
+    }
+
+    .team-member h3 {
+        font-size: 22px;
+    }
+
+    .team-member p {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
 
     :root {
-        --navbar-height: 90px;
+        --navbar-height: 135px;
+    }
+
+    .nav-logo {
+        width: 400px;
+        height: 120px;
     }
 
     .nav-logo img {
-        width: 80px;
+        width: 390px;
+        height: 115px;
+
+        transform: scale(1.15);
     }
 
     .nav-links {
-        gap: 35px;
+        gap: 45px;
+    }
+
+    .nav-links a {
+        font-size: 17px;
+    }
+
+    .hero {
+    height: 800px;
+    min-height: 800px;
+    }
+
+    .image-grid {
+        gap: 55px;
+    }
+
+    .footer-container {
+        gap: 70px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    :root {
+        --navbar-height: 125px;
+    }
+
+    .nav-container {
+        width: 92%;
+    }
+
+    .nav-logo {
+        width: 310px;
+        height: 105px;
+    }
+
+    .nav-logo img {
+        width: 300px;
+        height: 100px;
+
+        transform: scale(1.1);
+    }
+
+    .nav-links {
+        gap: 28px;
     }
 
     .nav-links a {
@@ -489,9 +1010,14 @@ main {
     }
 
     .hero {
-        min-height: 620px;
+        height: 720px;
+        min-height: 720px;
 
-        height: 70svh;
+        margin-top: var(--navbar-height);
+    }
+
+    .hero-content h1 {
+        font-size: clamp(52px, 8vw, 78px);
     }
 
     .image-grid {
@@ -499,13 +1025,12 @@ main {
     }
 
     .intro {
-        padding: 100px 0 110px;
+    padding: 175px 0 190px;
     }
 
     .footer-container {
-        gap: 50px;
+        gap: 45px;
     }
-
 }
 
 
@@ -516,73 +1041,81 @@ main {
 @media (max-width: 650px) {
 
     :root {
-        --navbar-height: 125px;
+        --navbar-height: 155px;
     }
-
-
-    /* NAVBAR */
 
     .navbar {
         height: var(--navbar-height);
+
+        border-bottom-width: 5px;
     }
 
     .nav-container {
-        width: 90%;
+        width: 92%;
 
         flex-direction: column;
 
         justify-content: center;
 
-        gap: 10px;
+        gap: 3px;
     }
 
     .nav-logo {
-        height: 65px;
+        width: 100%;
+        height: 92px;
+
+        justify-content: center;
     }
 
     .nav-logo img {
-        width: 165px;
+        width: 310px;
+        height: 88px;
 
-        max-height: 55px;
+        transform: scale(1.1);
+
+        transform-origin: center center;
     }
 
     .nav-links {
-        gap: 30px;
+        gap: 35px;
     }
 
     .nav-links a {
-        font-size: 13px;
+        font-size: 14px;
     }
 
 
     /* HERO */
 
     .hero {
-        min-height: 620px;
+        margin-top: var(--navbar-height);
 
-        height: 75svh;
+        height: 680px;
+        min-height: 680px;
 
         background-position: center center;
     }
 
     .hero-content {
         width: 90%;
+
+        padding: 40px 0;
     }
 
     .hero-content h1 {
-        font-size: clamp(42px, 11vw, 58px);
+        font-size: clamp(45px, 12vw, 64px);
 
-        margin-bottom: 28px;
+        margin-bottom: 32px;
     }
 
     .hero-content p {
-        font-size: 14px;
+        font-size: 15px;
 
-        margin-bottom: 28px;
+        margin-bottom: 32px;
     }
 
     .button {
-        padding: 14px 32px;
+        padding: 15px 36px;
 
         font-size: 14px;
     }
@@ -591,7 +1124,7 @@ main {
     /* INTRO */
 
     .intro {
-        padding: 85px 0 95px;
+        padding: 150px 0 165px;
     }
 
     .section-container {
@@ -600,7 +1133,7 @@ main {
 
     .intro h2,
     .experience h2 {
-        font-size: 39px;
+        font-size: 43px;
     }
 
     .intro-text {
@@ -613,28 +1146,26 @@ main {
     .image-grid {
         grid-template-columns: 1fr;
 
-        gap: 35px;
+        gap: 38px;
 
-        margin-top: 55px;
+        margin-top: 60px;
     }
 
     .image-card {
-        width: 100%;
-
-        aspect-ratio: 1.15 / 1;
+        aspect-ratio: 1.1 / 1;
     }
 
 
     /* EXPERIENCE */
 
     .experience {
-        padding-bottom: 90px;
+    padding: 0 0 200px;
     }
 
     .experience-container {
         width: 90%;
 
-        padding-top: 60px;
+        padding-top: 65px;
     }
 
     .experience p {
@@ -649,9 +1180,9 @@ main {
     /* FOOTER */
 
     .footer {
-        padding: 60px 0 40px;
+        min-height: 450px;
 
-        min-height: 400px;
+        padding: 65px 0 45px;
     }
 
     .footer-container {
@@ -659,11 +1190,11 @@ main {
 
         grid-template-columns: 1fr 1fr;
 
-        gap: 45px 25px;
+        gap: 50px 30px;
     }
 
     .footer-column h3 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .footer-column a {
@@ -673,38 +1204,37 @@ main {
     .footer-logo {
         grid-column: 1 / -1;
 
-        min-height: 170px;
+        min-height: 210px;
     }
 
     .footer-logo img {
-        width: 210px;
-
-        max-height: 190px;
+        width: 280px;
+        height: 230px;
     }
-
 }
 
 
 /* =========================================================
-   EXTRA SMALL MOBIL
+   MYCKET SMÅ MOBILER
 ========================================================= */
 
 @media (max-width: 400px) {
 
     :root {
-        --navbar-height: 120px;
+        --navbar-height: 150px;
     }
 
     .nav-logo {
-        height: 60px;
+        height: 88px;
     }
 
     .nav-logo img {
-        width: 145px;
+        width: 280px;
+        height: 82px;
     }
 
     .nav-links {
-        gap: 20px;
+        gap: 22px;
     }
 
     .nav-links a {
@@ -712,22 +1242,27 @@ main {
     }
 
     .hero {
-        min-height: 570px;
+        margin-top: var(--navbar-height);
 
-        height: 70svh;
+        height: 630px;
+        min-height: 630px;
     }
 
     .hero-content h1 {
-        font-size: 38px;
+        font-size: 39px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
     }
 
     .intro h2,
     .experience h2 {
-        font-size: 34px;
+        font-size: 35px;
     }
 
     .image-grid {
-        gap: 25px;
+        gap: 28px;
     }
 
     .footer-container {
@@ -737,5 +1272,4 @@ main {
     .footer-logo {
         grid-column: auto;
     }
-
 }
