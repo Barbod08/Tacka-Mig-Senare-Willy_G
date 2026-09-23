@@ -1442,8 +1442,6 @@ main img.scroll-reveal.visible {
     .hero {
         height: 720px;
         min-height: 720px;
-
-        margin-top: var(--navbar-height);
     }
 
     .hero-content h1 {
@@ -1518,12 +1516,10 @@ main img.scroll-reveal.visible {
     /* HERO */
 
     .hero {
-        margin-top: var(--navbar-height);
+    height: 680px;
+    min-height: 680px;
 
-        height: 680px;
-        min-height: 680px;
-
-        background-position: center center;
+    background-position: center center;
     }
 
     .hero-content {
