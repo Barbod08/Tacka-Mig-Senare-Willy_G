@@ -545,7 +545,7 @@ main {
 .about-intro {
     width: min(1350px, 88%);
 
-    margin: 0 auto;
+    margin: 260px auto 0;
 
     min-height: 650px;
 
@@ -720,6 +720,436 @@ main {
 
     letter-spacing: 0.7px;
 }
+
+/* =========================================================
+   KONTAKT
+========================================================= */
+
+.contact-page {
+    padding-top: var(--navbar-height);
+
+    background-color: var(--green);
+
+    color: var(--white);
+}
+
+.contact-section {
+    min-height: 680px;
+
+    padding: 260px 0 150px;
+}
+
+.contact-container {
+    width: min(1400px, 88%);
+
+    margin: 0 auto;
+}
+
+.contact-section h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(60px, 5vw, 78px);
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    line-height: 1.15;
+
+    margin: 0;
+}
+
+.contact-intro {
+    margin-top: 25px;
+
+    color: var(--text-light);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 21px;
+
+    line-height: 1.7;
+}
+
+.contact-line {
+    width: 100%;
+
+    height: 2px;
+
+    background-color: var(--orange);
+
+    margin: 65px 0 65px;
+}
+
+
+/* =========================================================
+   KONTAKTUPPGIFTER
+========================================================= */
+
+.contact-details {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    max-width: 900px;
+}
+
+.contact-item h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 27px;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    color: var(--text-light);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .contact-section {
+        min-height: 620px;
+
+        padding: 220px 0 120px;
+    }
+
+    .contact-container {
+        width: 90%;
+    }
+
+    .contact-section h1 {
+        font-size: 58px;
+    }
+
+    .contact-intro {
+        font-size: 19px;
+    }
+
+    .contact-line {
+        margin: 55px 0;
+    }
+
+    .contact-details {
+        gap: 60px;
+    }
+}
+
+
+/* =========================================================
+   SCROLL-ANIMATIONER
+========================================================= */
+
+.scroll-reveal {
+    opacity: 0;
+
+    transform: translateY(45px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* Lite långsammare och större känsla för bilder */
+
+main img.scroll-reveal {
+    transform: translateY(55px) scale(0.97);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+main img.scroll-reveal.visible {
+    transform: translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   COOKIE-BANNER
+========================================================= */
+
+.cookie-banner {
+    position: fixed;
+
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+
+    z-index: 100000;
+
+    background-color: var(--dark-green);
+
+    color: var(--white);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 10px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+
+    padding: 25px 30px;
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+.cookie-banner.cookie-hidden {
+    opacity: 0;
+
+    transform: translateY(30px);
+}
+
+
+.cookie-content {
+    width: min(1400px, 100%);
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+
+/* =========================================================
+   COOKIE TEXT
+========================================================= */
+
+.cookie-text h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 25px;
+
+    font-style: italic;
+
+    font-weight: 400;
+
+    color: #7dbb91;
+
+    margin-bottom: 5px;
+}
+
+.cookie-text p {
+    color: #dce6e1;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   COOKIE KNAPPAR
+========================================================= */
+
+.cookie-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-shrink: 0;
+}
+
+.cookie-buttons button {
+    border: none;
+
+    cursor: pointer;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    padding: 13px 22px;
+
+    border-radius: 5px;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+/* Tillåt alla */
+
+.cookie-accept {
+    background-color: #7dbb91;
+
+    color: var(--dark-green);
+}
+
+.cookie-accept:hover {
+    background-color: #92cba4;
+
+    transform: translateY(-2px);
+}
+
+
+/* Endast nödvändiga */
+
+.cookie-necessary {
+    background-color: #777;
+
+    color: white;
+}
+
+.cookie-necessary:hover {
+    background-color: #888;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   COOKIE MOBIL
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .cookie-banner {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+
+        padding: 20px;
+    }
+
+    .cookie-content {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 20px;
+    }
+
+    .cookie-text h2 {
+        font-size: 22px;
+    }
+
+    .cookie-text p {
+        font-size: 13px;
+    }
+
+    .cookie-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .cookie-buttons button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   RESPEKTERA MINSKAD RÖRELSE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .scroll-reveal,
+    main img.scroll-reveal,
+    .cookie-banner {
+        transition: none;
+    }
+
+    .scroll-reveal {
+        opacity: 1;
+
+        transform: none;
+    }
+
+    main img.scroll-reveal {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   MOBIL
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .contact-section {
+        min-height: 650px;
+
+        padding: 170px 0 100px;
+    }
+
+    .contact-container {
+        width: 90%;
+    }
+
+    .contact-section h1 {
+        font-size: 46px;
+    }
+
+    .contact-intro {
+        font-size: 17px;
+
+        line-height: 1.8;
+    }
+
+    .contact-line {
+        margin: 50px 0;
+    }
+
+    .contact-details {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .contact-item h2 {
+        font-size: 24px;
+    }
+
+    .contact-item p {
+        font-size: 18px;
+    }
+}
+
 
 
 /* =========================================================
